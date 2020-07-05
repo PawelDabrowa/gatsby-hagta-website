@@ -23,6 +23,7 @@ const ArticlesPage = ({ data }) => {
       <PageInfo title={pageData.title} paragraph={pageData.paragraph} />
       <ArticlesWrapper>
       {nodes.map(({ title, featuredImage }) => (
+
           <Preview
             key={title}
             title={title}
