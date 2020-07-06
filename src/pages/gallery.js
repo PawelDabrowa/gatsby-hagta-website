@@ -1,35 +1,38 @@
 import React from "react"
 import Layout from '../layout'
 import { graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 const GalleryPage = ({ data }) => {
-  const {
-    allDatoCmsGallery: { nodes },
-  } = data;
 
-    return (
+  return (
+    <Layout>
+      {data.datoCmsGalleryModal.galleryImages.map(item => {
+        const itemKey = Object.keys(item)[0];
 
-      <Layout>
-        {nodes.map(node => (
-        // <Image fluid={node.galleryImages.fluid}  />
-        <div>test</div>
-        ))}
-      </Layout>
-    );
+        switch (itemKey) {
+          case 'imageData':
+            return <Image key={item.id} fluid={item[itemKey].fluid} />;
+          default:
+            return null;
+        }
+      })}
+    </Layout>
+  );
 };
 
+export default GalleryPage;
+
 export const query = graphql`
-  {
-    allDatoCmsGallery {
-      nodes {
-        galleryImages {
-          fluid(maxWidth: 500) {
-            ...GatsbyDatoCmsFluid_tracedSVG
-          } 
+{
+  datoCmsGalleryModal {
+    galleryImages {
+      imageData {
+        fluid(maxWidth: 600) {
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
     }
   }
+}
 `;
-
-export default GalleryPage;
