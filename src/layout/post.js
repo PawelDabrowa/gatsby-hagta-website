@@ -4,16 +4,52 @@ import Image from 'gatsby-image';
 import { graphql } from 'gatsby';
 import Layout from '../layout'
 import GlobalStyle from "../assets/styles/globalStyles";
+import { PostWrapper, ImageWrapper, PostTitle, PostAuthor } from './styles/postStyles'
+
+const PostLayout = ({ data }) => {
+
+  return (
+    <Layout>
+      <GlobalStyle />
+      <PostWrapper>
+      <PostTitle>{data.datoCmsArticle.title}</PostTitle>
+      <PostAuthor><span>Author: </span><em>{data.datoCmsArticle.author}</em></PostAuthor>
+      <ImageWrapper>
+        <Image fluid={data.datoCmsArticle.featuredImage.fluid} />
+      </ImageWrapper>
+      <div>
+        {data.datoCmsArticle.articleContent.map(item => {
+          const itemKey = Object.keys(item)[1];
+          
+          switch (itemKey) {
+            case 'paragraphContent':
+              return <p key={item.id}>{item[itemKey]}</p>;
+            case 'headingContent':
+              return <h2 key={item.id}>{item[itemKey]}</h2>;
+            case 'imageData':
+              return <Image key={item.id} fluid={item[itemKey].fluid} />;
+            default:
+              return null;
+          }
+        })}
+      </div>
+      </PostWrapper>
+    </Layout>
+  );
+};
+
+export default PostLayout;
 
 export const query = graphql`
   query querySingleArticle($id: String!) {
     datoCmsArticle(id: { eq: $id }) {
       title
       featuredImage {
-        fixed(width: 500) {
-          ...GatsbyDatoCmsFixed_tracedSVG
+        fluid(maxWidth: 700) {
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
+
       author
       articleContent {
         ... on DatoCmsParagraph {
@@ -26,8 +62,8 @@ export const query = graphql`
         }
         ... on DatoCmsArticleImage {
           imageData {
-            fixed(width: 500) {
-              ...GatsbyDatoCmsFixed_tracedSVG
+            fluid(maxWidth: 700) {
+              ...GatsbyDatoCmsFluid_tracedSVG
             }
           }
           id
@@ -36,32 +72,3 @@ export const query = graphql`
     }
   }
 `;
-
-const PostLayout = ({ data }) => {
-  return (
-    <Layout>
-      <GlobalStyle />
-      <h1>{data.datoCmsArticle.title}</h1>
-      <p>{data.datoCmsArticle.author}</p>
-      <Image fixed={data.datoCmsArticle.featuredImage.fixed} />
-      <div>
-        {data.datoCmsArticle.articleContent.map(item => {
-          const itemKey = Object.keys(item)[1];
-          
-          switch (itemKey) {
-            case 'paragraphContent':
-              return <p key={item.id}>{item[itemKey]}</p>;
-            case 'headingContent':
-              return <h2 key={item.id}>{item[itemKey]}</h2>;
-            case 'imageData':
-              return <Image key={item.id} fixed={item[itemKey].fixed} />;
-            default:
-              return null;
-          }
-        })}
-      </div>
-    </Layout>
-  );
-};
-
-export default PostLayout;

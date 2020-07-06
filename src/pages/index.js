@@ -21,7 +21,7 @@ export const query = graphql`
   {
     file(name:{eq: "pots"}) {
       childImageSharp {
-        fluid(quality: 100) {
+        fluid(maxWidth: 1500, quality: 100) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
