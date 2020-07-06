@@ -1,8 +1,6 @@
 import React from "react"
 import Layout from '../layout'
 import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
-import GlobalStyle from "../assets/styles/globalStyles";
 import { ContentWrapper, StyledImage, Title, Content, Subtitle, Author, Line } from './styles/aboutStyles'
 
 const AboutPage = ({ data }) => (

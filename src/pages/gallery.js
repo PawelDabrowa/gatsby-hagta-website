@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from '../layout'
 import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
 
 const GalleryPage = ({ data }) => {
   const {
@@ -12,7 +11,8 @@ const GalleryPage = ({ data }) => {
 
       <Layout>
         {nodes.map(node => (
-        <Image fluid={node.galleryImages.fluid}  />
+        // <Image fluid={node.galleryImages.fluid}  />
+        <div>test</div>
         ))}
       </Layout>
     );
@@ -21,13 +21,12 @@ const GalleryPage = ({ data }) => {
 export const query = graphql`
   {
     allDatoCmsGallery {
-    
-        nodes {
-          galleryImages {
-            fluid(maxWidth: 500) {
-              ...GatsbyDatoCmsFluid_tracedSVG
-            } 
-          }
+      nodes {
+        galleryImages {
+          fluid(maxWidth: 500) {
+            ...GatsbyDatoCmsFluid_tracedSVG
+          } 
+        }
       }
     }
   }
