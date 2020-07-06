@@ -7,11 +7,14 @@ export const Wrapper = styled.div`
   @media (max-width: 768px) {
     max-width: none;
     text-align: center;
-    padding: 30px;
+    padding: 30px 0;
   }
   h1 {
     font-size: 52px;
     margin: 0;
+    @media (max-width: 768px) {
+      margin-bottom: 45px
+    }
   }
   p {
     font-size: 18px;

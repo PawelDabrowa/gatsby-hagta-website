@@ -13,7 +13,7 @@ const AboutPage = ({ data }) => (
     <Line />
     <Content>{data.datoCmsAbout.contentArea}</Content>
     <Line />
-    <Author>{data.datoCmsAbout.author}</Author>
+    <Author><em>{data.datoCmsAbout.author}</em></Author>
     </ContentWrapper>
     <StyledImage fluid={data.datoCmsAbout.imageData.fluid} />
   </Layout>

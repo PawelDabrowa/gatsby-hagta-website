@@ -15,7 +15,7 @@ export const ContentWrapper = styled.div`
       text-align: center;
       align-items: center; 
       height: calc(50vh - 100px);
-      min-height: 400px;
+      min-height: 450px;
       margin-top: 30px;
     }
 `;
