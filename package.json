@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-hagta-websitet",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Pawel Dabrowa",
+  "homepage": "https://PawelDabrowa.github.io/gatsby-hagta-website/",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.3",
     "@mdx-js/react": "^1.5.3",
@@ -46,7 +47,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "predeploy": "npm build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
