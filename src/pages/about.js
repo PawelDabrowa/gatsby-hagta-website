@@ -2,7 +2,6 @@ import React from "react"
 import Layout from '../layout'
 import { graphql } from 'gatsby';
 import { ContentWrapper, StyledImage, Title, Content, Subtitle, Author, Line } from './styles/aboutStyles'
-import MyForm from "./contact"
 
 const AboutPage = ({ data }) => (
 

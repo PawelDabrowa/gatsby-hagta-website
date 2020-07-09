@@ -5,7 +5,7 @@ import { ButtonWrapper } from './styles/PrimaryButtonStyles'
 const PrimaryButton = () => (
 
   <ButtonWrapper>
-    <Link to="/articles">read more</Link>
+    <Link to="/">read more</Link>
   </ButtonWrapper>
 );
 

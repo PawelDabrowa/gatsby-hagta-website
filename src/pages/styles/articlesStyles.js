@@ -13,6 +13,6 @@ export const ArticlesWrapper = styled.div`
     max-width: 500px;
     text-align: center;
     margin: 0 auto;
-    padding: 0 20px 40px;;
+    padding: 0 20px;
   }
 `;

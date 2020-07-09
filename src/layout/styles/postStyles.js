@@ -4,7 +4,6 @@ export const PostWrapper = styled.div`
   padding: 80px 65px 0;
     @media (max-width: 768px) {
     text-align: center;
-    padding: 120px 20px 0;
     }
 `;
 

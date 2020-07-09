@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from '../layout'
+import Image from 'gatsby-image';
 import { graphql } from "gatsby"
 import PrimaryButton from '../components/PrimaryButton'
 import { ContentWrapper, StyledImage, Title, Content } from './styles/indexStyles'
@@ -10,7 +11,7 @@ const IndexPage = ({data}) => (
     <ContentWrapper>
       <Title>Your new space</Title>
       <Content>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem vitae autem corporis?</Content>
-        <PrimaryButton />
+      <PrimaryButton />
     </ContentWrapper>
     <StyledImage fluid={data.file.childImageSharp.fluid} />
   </Layout>
