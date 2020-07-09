@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from "react"
 import Image from 'gatsby-image';
 
 export const ContentWrapper = styled.div`
