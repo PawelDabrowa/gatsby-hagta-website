@@ -54,7 +54,7 @@ export const Logo = styled.span`
  color: #000;
  @media (max-width: 768px) {
    top: 20px;
-   left: calc(100% - 100px);
+   left: calc(100% - 90px);
  }
  a {
       text-decoration: none;
