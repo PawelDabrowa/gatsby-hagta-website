@@ -6,6 +6,7 @@ import { StyledLabel, StyledInput } from './styles/contactStyles'
 import { Button } from '../components/styles/ContactButtonStyles'
 import PageInfo from '../components/PageInfo';
 
+
 const pageData = {
   title: 'contact',
   paragraph: `While artists work from real to the abstract, architects must work from the abstract to the real.`,
