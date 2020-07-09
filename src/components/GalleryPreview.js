@@ -1,10 +1,17 @@
 import React from 'react';
-import {GalleryStyledImage } from './styles/GalleryPreviewStyles';
+import { PreviewInfoLabel } from './styles/GalleryPreviewStyles';
 
-const GalleryPreview = ({image}) => (
-  
-    <GalleryStyledImage fluid={image} />
- 
+const pageData = {
+    title: 'gallery',
+    paragraph: `Great things are done by a series of small things brought together.`,
+  }
+
+
+const Preview = () => (
+      <PreviewInfoLabel>
+        <h1>{pageData.title}</h1>
+        <p>{pageData.paragraph}</p>
+      </PreviewInfoLabel>
 );
 
-export default GalleryPreview;
+export default Preview;

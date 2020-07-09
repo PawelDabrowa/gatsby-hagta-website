@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     max-width: none;
     text-align: center;
     padding: 30px 0;
+    margin: 90px 0 20px;
   }
   h1 {
     font-size: 52px;

@@ -7,3 +7,10 @@ export const GalleryStyledImage = styled(Image)`
   height: 100%;
   object-fit: cover;
 `;
+
+export const PreviewInfoLabel = styled.div`
+ margin-top: 40px;
+  h1 {
+    font-size: 52px;
+  }
+`;

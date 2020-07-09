@@ -8,7 +8,7 @@ export const StyledHamburger = styled.button`
     @media (max-width: 768px) {
       position: absolute;
       top: 10px;
-      left: 10px;
+      left: 12px;
       padding: 10px;
       display: inline-block;
       background-color: transparent;

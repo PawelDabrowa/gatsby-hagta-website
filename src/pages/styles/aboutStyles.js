@@ -9,17 +9,22 @@ export const ContentWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    min-height: 450px;
+
     @media (max-width: 768px) {
       width: 100%;
       text-align: center;
       align-items: center; 
       height: calc(50vh - 100px);
-      /* min-height: 470px; */
+      min-height: 450px;
       margin-top: 150px;
     }
-    @media (max-width: 450px) {
-      height: calc(70vh - 100px);
-      margin-top: 120px;
+    @media only screen and (min-device-width: 812px) 
+      and (max-device-width: 812px) 
+      and (orientation: landscape) {
+        overflow: scroll;
+        padding-top: 300px;
+        min-height: 150px;
     }
 `;
 
